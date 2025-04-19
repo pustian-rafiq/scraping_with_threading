@@ -1,0 +1,30 @@
+"""
+scraper.py
+This script scrapes book data from the website "Books to Scrape" using multithreading
+to improve performance. The scraped data includes the title, price, and availability
+of books, which is saved to a CSV file.
+Modules:
+    - requests: For making HTTP requests to the website.
+    - bs4 (BeautifulSoup): For parsing HTML content.
+    - csv: For writing scraped data to a CSV file.
+    - threading: For implementing multithreading.
+    - time: For adding optional delays between requests.
+    - queue (Queue): For managing thread-safe page numbers.
+Constants:
+    - BASE_URL (str): The base URL of the website with a placeholder for page numbers.
+    - TOTAL_PAGES (int): The total number of pages to scrape.
+    - OUTPUT_FILE (str): The name of the output CSV file.
+Functions:
+    - scrape_page(page_num): Scrapes data from a single page and writes it to the CSV file.
+    - process_pages(): Worker function for threads to process pages from the queue.
+    - main(): The main function that initializes the CSV file, starts threads, and waits
+      for them to complete.
+Usage:
+    Run the script directly to start scraping. The script uses 5 threads by default
+    to scrape data from all pages. The scraped data is saved to 'output.csv'.
+Optional Enhancements:
+    - Add a delay between requests to avoid overwhelming the server.
+    - Implement a retry mechanism for failed requests.
+    - Implement a logging mechanism for better error handling.
+    - Use a configuration file for settings.
+"""
